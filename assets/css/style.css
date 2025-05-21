@@ -1,0 +1,15 @@
+:root {
+    /* Fundo principal */
+    --color-bg-primary: #1B2133;
+    /* Fundo secundário */
+    --color-bg-secondary: #222A40;
+    /* Terciário, se precisar variar um pouco */
+    --color-bg-tertiary: #33415A;
+
+    /* Ciano vibrante para destaques, botões, links */
+    --color-accent: #00FCF8;
+
+    /* Texto padrão branco */
+    --color-text: #FFFFFF;
+}
+
