@@ -11,9 +11,153 @@
     <title>SpendWise</title>
 </head>
 
-<body>
-    <h1>Hello, world!</h1>
+<body class="bg--dark display--flex">
+    <nav class="navbar bg--second">
+        <div class="navbar__content">
+            <div class="navbar__header item--center gap--20">
+                <ion-icon class="ion__icon" name="menu"></ion-icon>
+                <a href="#" class="navbar__brand f--22 t--bold">SpendWise</a>
+            </div>
+            <ul class="navbar__nav flex--column">
+                <li class="nav__item active">
+                    <a class="nav__link item--center gap--20" href="#">
+                        <ion-icon class="ion__icon" name="grid"></ion-icon>
+                        Visão Geral
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link item--center gap--20" href="#">
+                        <ion-icon class="ion__icon" name="wallet"></ion-icon>
+                        Conta
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link item--center gap--20" href="#">
+                        <ion-icon class="ion__icon" name="card"></ion-icon>
+                        Cartão de Crédito
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link item--center gap--20" href="#">
+                        <ion-icon class="ion__icon" name="bookmark"></ion-icon>
+                        Categorias
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link item--center gap--20" href="#">
+                        <ion-icon class="ion__icon" name="bar-chart"></ion-icon>
+                        Gráficos
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link item--center gap--20" href="#">
+                        <ion-icon class="ion__icon" name="settings"></ion-icon>
+                        Configurações
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link item--center gap--20" href="#">
+                        <ion-icon class="ion__icon" name="log-out"></ion-icon>
+                        Sair
+                    </a>
+                </li>
+            </ul>
+            <div class="user item--center gap--20">
+                <img src="./assets/img/profile.png" alt="Foto do usuário" class="user__avatar" />
+                <span class="user__name t--bold">Hyan Ferreira</span>
+            </div>
+        </div>
+    </nav>
 
+    <main>
+        <div class="container">
+            <div class="content">
+
+                <div class="balance item--center flex--between">
+
+                    <div class="balance__item item--center">
+                        <div class="balance__icon">
+                            <ion-icon class="ion__icon" name="checkmark-circle"></ion-icon>
+                        </div>
+                        <div class="balance__info flex--column">
+                            <span class="balance__value f--22 t--bold">R$ 1.000,00</span>
+                            <span class="balance__label">Inicial</span>
+                        </div>
+                    </div>
+                    
+                    <div class="balance__item item--center">
+                        <div class="balance__icon">
+                            <ion-icon class="ion__icon" name="wallet"></ion-icon>
+                        </div>
+                        <div class="balance__info flex--column">
+                            <span class="balance__value f--22 t--bold">R$ 2.300,00</span>
+                            <span class="balance__label">Saldo atual</span>
+                        </div>
+                    </div>
+
+                    <div class="balance__item item--center">
+                        <div class="balance__icon">
+                            <ion-icon class="ion__icon" name="trending-up"></ion-icon>
+                        </div>
+                        <div class="balance__info flex--column">
+                            <span class="balance__value f--22 t--bold">R$ 3.100,00</span>
+                            <span class="balance__label">Previsto</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <h1 class="content__title">Visão Geral</h1>
+
+                <div class="overview">
+                    <div class="overview__card flex--center">
+                        <div class="overview__icon">
+                            <ion-icon class="ion__icon" name="wallet"></ion-icon>
+                        </div>
+                        <div class="overview__info flex--column">
+                            <span class="overview__value f--18 t--bold">R$ 1.500,00</span>
+                            <span class="overview__label f--14">Conta</span>
+                        </div>
+                    </div>
+
+                    <div class="overview__card flex--center">
+                        <div class="overview__icon">
+                            <ion-icon class="ion__icon" name="arrow-up-circle"></ion-icon>
+                        </div>
+                        <div class="overview__info flex--column">
+                            <span class="overview__value f--18 t--bold">R$ 800,00</span>
+                            <span class="overview__label f--14">Receitas</span>
+                        </div>
+                    </div>
+
+                    <div class="overview__card flex--center">
+                        <div class="overview__icon">
+                            <ion-icon class="ion__icon" name="arrow-down-circle"></ion-icon>
+                        </div>
+                        <div class="overview__info flex--column">
+                            <span class="overview__value f--18 t--bold">R$ 2.300,00</span>
+                            <span class="overview__label f--14">Despesas</span>
+                        </div>
+                    </div>
+
+                    <div class="overview__card flex--center">
+                        <div class="overview__icon">
+                            <ion-icon class="ion__icon" name="card"></ion-icon>
+                        </div>
+                        <div class="overview__info flex--column">
+                            <span class="overview__value f--18 t--bold">R$ 500,00</span>
+                            <span class="overview__label f--14">Cartões de Crédito</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </body>
 
