@@ -16,41 +16,35 @@
         <div class="navbar__content">
             <div class="navbar__header item--center gap--20">
                 <ion-icon class="ion__icon" name="menu"></ion-icon>
-                <a href="#" class="navbar__brand f--22 t--bold">SpendWise</a>
+                <a href="./index.html" class="navbar__brand f--22 t--bold">SpendWise</a>
             </div>
             <ul class="navbar__nav flex--column">
                 <li class="nav__item active">
-                    <a class="nav__link item--center gap--20" href="#">
+                    <a class="nav__link item--center gap--20" href="./index.html">
                         <ion-icon class="ion__icon" name="grid"></ion-icon>
                         Visão Geral
                     </a>
                 </li>
                 <li class="nav__item">
-                    <a class="nav__link item--center gap--20" href="#">
+                    <a class="nav__link item--center gap--20" href="./pages/wallet.html">
                         <ion-icon class="ion__icon" name="wallet"></ion-icon>
                         Conta
                     </a>
                 </li>
                 <li class="nav__item">
-                    <a class="nav__link item--center gap--20" href="#">
+                    <a class="nav__link item--center gap--20" href="./pages/credit-card.html">
                         <ion-icon class="ion__icon" name="card"></ion-icon>
                         Cartão de Crédito
                     </a>
                 </li>
                 <li class="nav__item">
-                    <a class="nav__link item--center gap--20" href="#">
+                    <a class="nav__link item--center gap--20" href="./pages/categories.html">
                         <ion-icon class="ion__icon" name="bookmark"></ion-icon>
                         Categorias
                     </a>
                 </li>
                 <li class="nav__item">
-                    <a class="nav__link item--center gap--20" href="#">
-                        <ion-icon class="ion__icon" name="bar-chart"></ion-icon>
-                        Gráficos
-                    </a>
-                </li>
-                <li class="nav__item">
-                    <a class="nav__link item--center gap--20" href="#">
+                    <a class="nav__link item--center gap--20" href="./pages/settings.html">
                         <ion-icon class="ion__icon" name="settings"></ion-icon>
                         Configurações
                     </a>
@@ -84,7 +78,7 @@
                             <span class="balance__label">Inicial</span>
                         </div>
                     </div>
-                    
+
                     <div class="balance__item item--center">
                         <div class="balance__icon">
                             <ion-icon class="ion__icon" name="wallet"></ion-icon>
@@ -148,6 +142,89 @@
                             <span class="overview__value f--18 t--bold">R$ 500,00</span>
                             <span class="overview__label f--14">Cartões de Crédito</span>
                         </div>
+                    </div>
+                </div>
+
+                <h1 class="content__title">Conta</h1>
+
+                <div class="wallet flex--column gap--20">
+                    <div class="wallet__info flex--between">
+                        <div class="wallet__item flex--column">
+                            <span class="wallet__desc">Descrição</span>
+                            <hr>
+                            <div class="item--center gap--15">
+                                <span class="wallet__icon flex--center">
+                                    <img src="./assets/img/icon-mercado-pago.svg" alt="Icone do banco">
+                                </span>
+                                <span class="wallet__label">Mercado Pago</span>
+                            </div>
+                        </div>
+
+                        <div class="wallet__item flex--column">
+                            <span class="wallet__label">Receitas</span>
+                            <hr>
+                            <span class="wallet__value">R$ 800,00</span>
+                        </div>
+
+                        <div class="wallet__item flex--column">
+                            <span class="wallet__label">Despesas</span>
+                            <hr>
+                            <span class="wallet__value">R$ 2.300,00</span>
+                        </div>
+
+                        <div class="wallet__item flex--column">
+                            <span class="wallet__label">Saldo Atual</span>
+                            <hr>
+                            <span class="wallet__value">R$ 2.300,00</span>
+                        </div>
+
+
+                        <div class="wallet__item flex--column">
+                            <span class="wallet__label">Saldo Previsto</span>
+                            <hr>
+                            <span class="wallet__value">R$ 3.100,00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="content__title">Cartões de Crédito</h1>
+
+                <div class="credit-cards flex--column gap--15">
+                    <!-- Cabeçalho da "tabela" -->
+                    <div class="credit-cards__header grid--table">
+                        <span class="credit-cards__title">Descrição</span>
+                        <span class="credit-cards__title">Fechamento</span>
+                        <span class="credit-cards__title">Vencimento</span>
+                        <span class="credit-cards__title">Fatura</span>
+                        <span class="credit-cards__title">Próxima Fatura</span>
+                    </div>
+
+                    <!-- Linha 1 -->
+                    <div class="credit-cards__row grid--table">
+                        <div class="credit-cards__desc item--center gap--15">
+                            <span class="credit-cards__icon flex--center">
+                                <img src="./assets/img/icon-mercado-pago.svg" alt="Nubank">
+                            </span>
+                            <span class="credit-cards__name">Mercado Pago</span>
+                        </div>
+                        <span class="credit-cards__cell">27/06</span>
+                        <span class="credit-cards__cell">30/06</span>
+                        <span class="credit-cards__cell">R$ 1.300,00</span>
+                        <span class="credit-cards__cell">R$ 179,45</span>
+                    </div>
+
+                    <!-- Linha 2 -->
+                    <div class="credit-cards__row grid--table">
+                        <div class="credit-cards__desc item--center gap--15">
+                            <span class="credit-cards__icon flex--center">
+                                <img src="./assets/img/icon-mercado-pago.svg" alt="Inter">
+                            </span>
+                            <span class="credit-cards__name">Mercado Pago</span>
+                        </div>
+                        <span class="credit-cards__cell">10/06</span>
+                        <span class="credit-cards__cell">15/06</span>
+                        <span class="credit-cards__cell">R$ 700,00</span>
+                        <span class="credit-cards__cell">R$ 250,00</span>
                     </div>
                 </div>
 

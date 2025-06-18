@@ -110,6 +110,10 @@ a {
     gap: 6px;
 }
 
+.gap--15 {
+    gap: 15px;
+}
+
 .gap--20 {
     gap: 20px;
 }
@@ -267,4 +271,82 @@ main {
 
 .overview__info {
     gap: 0px;
+}
+
+/* Wallet */
+
+.wallet,
+.credit-cards {
+    background-color: var(--color-bg-secondary);
+    padding: 20px 50px;
+    border-radius: 15px;
+    /* height: 120px; */
+}
+
+.wallet__item {
+    flex: 1;
+    /* height: 100px; */
+}
+
+/* .wallet__label {
+    padding: 10px 0;
+} */
+
+.wallet__value {
+    padding: 15px 0;
+}
+
+.wallet__icon,
+.credit-cards__icon {
+    width: 46px;
+    height: 46px;
+    background-color: #FFF;
+    border-radius: 100%;
+}
+
+.wallet__icon img,
+.credit-cards__icon img {
+    width: 38px;
+}
+
+
+/* Credit Card */
+
+.credit-cards {
+    background-color: var(--color-bg-secondary);
+}
+
+.grid--table {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+.credit-cards__header {
+    font-weight: bold;
+    padding: 10px 0;
+    border-bottom: 2px solid #ddd;
+}
+
+.credit-cards__row {
+    background-color: var(--color-bg-secondary);
+    padding: 15px 0;
+    border-radius: 8px;
+}
+
+/* .credit-cards__icon {
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.credit-cards__icon img {
+    width: 24px;
+} */
+
+.credit-cards__desc {
+    display: flex;
+    align-items: center;
 }
