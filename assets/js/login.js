@@ -1,50 +1,80 @@
-// document.addEventListener("DOMContentLoaded", () => {
-//   // Alternar formulários
-//   const btnLogin = document.querySelector(".btn-signin");
-//   const btnCadastrar = document.querySelector(".btn-signup");
-//   const contentLogin = document.querySelector(".content-signin-form");
-//   const contentCadastrar = document.querySelector(".content-signup-form");
-//   const contentSignIn = document.querySelector(".content-signin-welcome");
-//   const contentSignUp = document.querySelector(".content-signup-welcome");
+const API_URL = "http://localhost:3000";
 
-//   btnCadastrar.addEventListener("click", e => {
-//     e.preventDefault();
-//     contentCadastrar.style.transform = "translateX(0)";
-//     contentCadastrar.style.opacity = "1";
-//     contentSignUp.style.transform = "translateX(100%)";
-//     contentSignUp.style.opacity = "0";
-//     contentLogin.style.transform = "translateX(-100%)";
-//     contentLogin.style.opacity = "0";
-//     contentSignIn.style.transform = "translateX(0)";
-//     contentSignIn.style.opacity = "1";
-//   });
+document.addEventListener("DOMContentLoaded", () => {
+  const loginForm = document.getElementById("login-form");
 
-//   btnLogin.addEventListener("click", e => {
-//     e.preventDefault();
-//     contentCadastrar.style.transform = "translateX(100%)";
-//     contentCadastrar.style.opacity = "0";
-//     contentSignUp.style.transform = "translateX(0)";
-//     contentSignUp.style.opacity = "1";
-//     contentLogin.style.transform = "translateX(0)";
-//     contentLogin.style.opacity = "1";
-//     contentSignIn.style.transform = "translateX(-100%)";
-//     contentSignIn.style.opacity = "0";
-//   });
+  loginForm.addEventListener("submit", async event => {
+    event.preventDefault();
 
-//   // Mostrar/ocultar senha
-//   function togglePassword(inputId, imgId) {
-//     const input = document.getElementById(inputId);
-//     const img = document.getElementById(imgId);
-//     const lock = "../images/password-lock.svg";
-//     const unlock = "../images/password-unlock.svg";
+    const email = loginForm["login-email"].value.trim();
+    const senha = loginForm["login-password"].value;
 
-//     img.addEventListener("click", () => {
-//       const isVisible = input.type === "text";
-//       input.type = isVisible ? "password" : "text";
-//       img.src = isVisible ? lock : unlock;
-//     });
-//   }
+    try {
+      const response = await fetch(`${API_URL}/users/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email, senha })
+      });
 
-//   togglePassword("senha-login", "toggle-signin-password");
-//   togglePassword("senha", "toggle-signup-password");
-// });
+      if (!response.ok) {
+        const errorData = await response.json();
+        alert("Erro: " + (errorData.message || "Falha no login."));
+        return;
+      }
+
+      const userData = await response.json();
+
+      // Armazena o usuário no localStorage (sessão simples)
+      localStorage.setItem("token", userData.token);
+      localStorage.setItem("usuario", JSON.stringify(userData.user));
+
+      // Redireciona ou atualiza a página
+      alert(`Bem-vindo, ${userData.user.nome}!`);
+      window.location.href = "/index.html"; // ou qualquer página principal
+    } catch (error) {
+      console.error("Erro de conexão:", error);
+      alert("Erro ao conectar com o servidor.");
+    }
+  });
+
+  const registerForm = document.getElementById("register-form");
+
+  registerForm.addEventListener("submit", async event => {
+    event.preventDefault();
+
+    const nome = registerForm["register-name"].value.trim();
+    const email = registerForm["register-email"].value.trim();
+    const senha = registerForm["register-password"].value;
+    const confirmSenha = registerForm["register-confirm"].value;
+
+    if (senha !== confirmSenha) {
+      alert("As senhas não conferem!");
+      return;
+    }
+
+    try {
+      const response = await fetch(`${API_URL}/users/create`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ nome, email, senha })
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        alert("Erro: " + (errorData.message || "Falha ao cadastrar usuário."));
+        return;
+      }
+
+      alert("Usuário cadastrado com sucesso! Agora faça login.");
+      registerForm.reset();
+      // Aqui pode chamar função para mostrar o form de login
+    } catch (error) {
+      alert("Erro ao conectar com o servidor.");
+      console.error(error);
+    }
+  });
+});

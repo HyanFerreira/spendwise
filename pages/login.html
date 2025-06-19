@@ -4,87 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="../assets/css/style.css"> -->
-    <!-- <link rel="stylesheet" href="../assets/css/login.css"> -->
+    <link rel="stylesheet" href="../assets/css/style.css">
     <title>SpendWise - Entrar</title>
 </head>
 
 <body>
-    <!-- <main class="main">
-        <div class="logo">
-            <img src="../images/logoTipo2.png" alt="SpendWise logo" />
-        </div>
-        <div class="container">
-            <div class="loading-container">
-                <div class="loader"></div>
+    <section class="auth auth--login">
+        <h1 class="auth__title">Entrar</h1>
+
+        <form class="auth__form" id="login-form" method="POST" action="/login">
+            <div class="auth__group">
+                <label for="login-email" class="auth__label">Email</label>
+                <input type="email" id="login-email" name="email" class="auth__input" required>
             </div>
 
-            <div class="content-signin">
-                <div class="content-signin-welcome">
-                    <h1>Bem-vindo(a) de volta!</h1>
-                    <span>Faça login novamente e continue usando SpendWise.</span>
-                    <button class="btn-signin">Sign In</button>
-                </div>
-                <div class="content-signin-form">
-                    <h1>Sign In</h1>
-                    <form id="form-signin">
-                        <div class="label-input">
-                            <label>CPF</label>
-                            <input type="text" id="cpf-login" required />
-                        </div>
-                        <div class="label-input">
-                            <label>Senha</label>
-                            <div class="area-password">
-                                <input type="password" id="senha-login" required />
-                                <img src="../images/password-lock.svg" alt="Mostrar senha" id="toggle-signin-password"
-                                    class="password-toggle" />
-                            </div>
-                        </div>
-                        <div class="remember-password">
-                            Esqueceu a senha? <a href="#">Clique aqui.</a>
-                        </div>
-                        <button type="submit" class="button-signin">Entrar</button>
-                        <div class="message-error"></div>
-                    </form>
-                </div>
+            <div class="auth__group">
+                <label for="login-password" class="auth__label">Senha</label>
+                <input type="password" id="login-password" name="password" class="auth__input" required>
             </div>
 
-            <div class="content-signup">
-                <div class="content-signup-welcome">
-                    <h1>Olá, amigo(a)!</h1>
-                    <span>Preencha os dados para entrar no SpendWise.</span>
-                    <button class="btn-signup">Sign Up</button>
-                </div>
-                <div class="content-signup-form">
-                    <h1>Sign Up</h1>
-                    <form id="form-signup">
-                        <div class="label-input">
-                            <label>Nome</label>
-                            <input type="text" id="nome" required />
-                        </div>
-                        <div class="label-input">
-                            <label>Sobrenome</label>
-                            <input type="text" id="sobrenome" required />
-                        </div>
-                        <div class="label-input">
-                            <label>CPF</label>
-                            <input type="text" id="cpf" required />
-                        </div>
-                        <div class="label-input">
-                            <label>Senha</label>
-                            <div class="area-password">
-                                <input type="password" id="senha" required />
-                                <img src="../images/password-lock.svg" alt="Mostrar senha" id="toggle-signup-password"
-                                    class="password-toggle" />
-                            </div>
-                        </div>
-                        <button type="submit" class="button-signup">Cadastrar</button>
-                        <div class="message-error"></div>
-                    </form>
-                </div>
+            <button type="submit" class="auth__button">Entrar</button>
+
+            <p class="auth__switch">Não tem uma conta? <a href="#" class="auth__link"
+                    id="show-register">Cadastrar-se</a></p>
+        </form>
+    </section>
+
+    <section class="auth auth--register hidden">
+        <h1 class="auth__title">Cadastrar-se</h1>
+
+        <form class="auth__form" id="register-form" method="POST" action="/register">
+            <div class="auth__group">
+                <label for="register-name" class="auth__label">Nome</label>
+                <input type="text" id="register-name" name="name" class="auth__input" required>
             </div>
-        </div>
-    </main> -->
+
+            <div class="auth__group">
+                <label for="register-email" class="auth__label">Email</label>
+                <input type="email" id="register-email" name="email" class="auth__input" required>
+            </div>
+
+            <div class="auth__group">
+                <label for="register-password" class="auth__label">Senha</label>
+                <input type="password" id="register-password" name="password" class="auth__input" required>
+            </div>
+
+            <div class="auth__group">
+                <label for="register-confirm" class="auth__label">Confirmar Senha</label>
+                <input type="password" id="register-confirm" name="confirm_password" class="auth__input" required>
+            </div>
+
+            <button type="submit" class="auth__button">Cadastrar</button>
+
+            <p class="auth__switch">Já tem uma conta? <a href="#" class="auth__link" id="show-login">Entrar</a></p>
+        </form>
+    </section>
+
+    <script src="../assets/js/login.js"></script>
+
 </body>
 
 </html>

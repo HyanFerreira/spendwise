@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <!-- <link rel="stylesheet" href="./assets/css/reset.css"> -->
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>SpendWise</title>
 </head>
@@ -44,26 +43,26 @@
                     </a>
                 </li>
                 <li class="nav__item">
-                    <a class="nav__link item--center gap--20" href="./pages/settings.html">
+                    <a class="nav__link item--center gap--20" href="#">
                         <ion-icon class="ion__icon" name="settings"></ion-icon>
                         Configurações
                     </a>
                 </li>
                 <li class="nav__item">
-                    <a class="nav__link item--center gap--20" href="#">
+                    <a class="nav__link item--center gap--20" href="#" id="btn-logout">
                         <ion-icon class="ion__icon" name="log-out"></ion-icon>
                         Sair
                     </a>
                 </li>
             </ul>
-            <div class="user item--center gap--20">
+            <div class="user item--center gap--20" id="user">
                 <img src="./assets/img/profile.png" alt="Foto do usuário" class="user__avatar" />
-                <span class="user__name t--bold">Hyan Ferreira</span>
+                <span class="user__name t--bold" id="user-name">Hyan Ferreira</span>
             </div>
         </div>
     </nav>
 
-    <main>
+    <main class="main__dashboard">
         <div class="container">
             <div class="content">
 
@@ -189,7 +188,7 @@
 
                 <h1 class="content__title">Cartões de Crédito</h1>
 
-                <div class="credit-cards flex--column gap--15">
+                <div class="credit-cards flex--column gap--0">
                     <!-- Cabeçalho da "tabela" -->
                     <div class="credit-cards__header grid--table">
                         <span class="credit-cards__title">Descrição</span>
@@ -228,6 +227,84 @@
                     </div>
                 </div>
 
+                <h1 class="content__title">Últimas Despesas</h1>
+
+                <div class="expenses flex--column gap--0">
+
+                    <!-- Cabeçalho -->
+                    <div class="expenses__header grid--table">
+                        <span class="expenses__title">Descrição</span>
+                        <span class="expenses__title">Categoria</span>
+                        <span class="expenses__title">Data</span>
+                        <span class="expenses__title">Valor</span>
+                    </div>
+
+                    <!-- Linha 1 -->
+                    <div class="expenses__row grid--table">
+                        <div class="expenses__desc item--center gap--15">
+                            <span class="expenses__icon flex--center">
+                                <img src="./assets/img/icon-supermercado.svg" alt="Supermercado">
+                            </span>
+                            <span class="expenses__name">Supermercado</span>
+                        </div>
+                        <span class="expenses__cell">Alimentação</span>
+                        <span class="expenses__cell">10/06</span>
+                        <span class="expenses__cell">R$ 300,00</span>
+                    </div>
+
+                    <!-- Linha 2 -->
+                    <div class="expenses__row grid--table">
+                        <div class="expenses__desc item--center gap--15">
+                            <span class="expenses__icon flex--center">
+                                <img src="./assets/img/icon-transporte.svg" alt="Transporte">
+                            </span>
+                            <span class="expenses__name">Uber</span>
+                        </div>
+                        <span class="expenses__cell">Transporte</span>
+                        <span class="expenses__cell">12/06</span>
+                        <span class="expenses__cell">R$ 58,00</span>
+                    </div>
+                </div>
+
+                <h1 class="content__title">Últimas Receitas</h1>
+
+                <div class="income flex--column gap--0">
+
+                    <!-- Cabeçalho -->
+                    <div class="income__header grid--table">
+                        <span class="income__title">Descrição</span>
+                        <span class="income__title">Categoria</span>
+                        <span class="income__title">Data</span>
+                        <span class="income__title">Valor</span>
+                    </div>
+
+                    <!-- Linha 1 -->
+                    <div class="income__row grid--table">
+                        <div class="income__desc item--center gap--15">
+                            <span class="income__icon flex--center">
+                                <img src="./assets/img/icon-salario.svg" alt="Salário">
+                            </span>
+                            <span class="income__name">Salário</span>
+                        </div>
+                        <span class="income__cell">Trabalho</span>
+                        <span class="income__cell">05/06</span>
+                        <span class="income__cell">R$ 2.500,00</span>
+                    </div>
+
+                    <!-- Linha 2 -->
+                    <div class="income__row grid--table">
+                        <div class="income__desc item--center gap--15">
+                            <span class="income__icon flex--center">
+                                <img src="./assets/img/icon-pix.svg" alt="Pix">
+                            </span>
+                            <span class="income__name">Transferência Pix</span>
+                        </div>
+                        <span class="income__cell">Outros</span>
+                        <span class="income__cell">08/06</span>
+                        <span class="income__cell">R$ 320,00</span>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -236,6 +313,7 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>

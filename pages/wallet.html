@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- <link rel="stylesheet" href="../assets/css/reset.css"> -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>SpendWise</title>
+</head>
+
+<body class="bg--dark display--flex">
+    <nav class="navbar bg--second">
+        <div class="navbar__content">
+            <div class="navbar__header item--center gap--20">
+                <ion-icon class="ion__icon" name="menu"></ion-icon>
+                <a href="../index.html" class="navbar__brand f--22 t--bold">SpendWise</a>
+            </div>
+            <ul class="navbar__nav flex--column">
+                <li class="nav__item">
+                    <a class="nav__link item--center gap--20" href="../index.html">
+                        <ion-icon class="ion__icon" name="grid"></ion-icon>
+                        Visão Geral
+                    </a>
+                </li>
+                <li class="nav__item active">
+                    <a class="nav__link item--center gap--20" href="../pages/wallet.html">
+                        <ion-icon class="ion__icon" name="wallet"></ion-icon>
+                        Conta
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link item--center gap--20" href="../pages/credit-card.html">
+                        <ion-icon class="ion__icon" name="card"></ion-icon>
+                        Cartão de Crédito
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link item--center gap--20" href="../pages/categories.html">
+                        <ion-icon class="ion__icon" name="bookmark"></ion-icon>
+                        Categorias
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link item--center gap--20" href="#">
+                        <ion-icon class="ion__icon" name="settings"></ion-icon>
+                        Configurações
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link item--center gap--20" href="#" id="btn-logout">
+                        <ion-icon class="ion__icon" name="log-out"></ion-icon>
+                        Sair
+                    </a>
+                </li>
+            </ul>
+            <div class="user item--center gap--20">
+                <img src="../assets/img/profile.png" alt="Foto do usuário" class="user__avatar" />
+                <span class="user__name t--bold" id="user-name">Hyan Ferreira</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main__dashboard">
+        <div class="container">
+            <div class="content">
+
+            </div>
+        </div>
+
+    </main>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
