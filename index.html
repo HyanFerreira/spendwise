@@ -57,7 +57,7 @@
             </ul>
             <div class="user item--center gap--20" id="user">
                 <img src="./assets/img/profile.png" alt="Foto do usuário" class="user__avatar" />
-                <span class="user__name t--bold" id="user-name">Hyan Ferreira</span>
+                <span class="user__name t--bold" id="user-name">--</span>
             </div>
         </div>
     </nav>
@@ -66,7 +66,7 @@
         <div class="container">
             <div class="content">
 
-                <div class="balance item--center flex--between">
+                <!-- <div class="balance item--center flex--between">
 
                     <div class="balance__item item--center">
                         <div class="balance__icon">
@@ -98,7 +98,7 @@
                         </div>
                     </div>
 
-                </div>
+                </div> -->
 
                 <h1 class="content__title">Visão Geral</h1>
 
@@ -108,7 +108,7 @@
                             <ion-icon class="ion__icon" name="wallet"></ion-icon>
                         </div>
                         <div class="overview__info flex--column">
-                            <span class="overview__value f--18 t--bold">R$ 1.500,00</span>
+                            <span class="overview__value f--18 t--bold">--</span>
                             <span class="overview__label f--14">Conta</span>
                         </div>
                     </div>
@@ -118,7 +118,7 @@
                             <ion-icon class="ion__icon" name="arrow-up-circle"></ion-icon>
                         </div>
                         <div class="overview__info flex--column">
-                            <span class="overview__value f--18 t--bold">R$ 800,00</span>
+                            <span class="overview__value f--18 t--bold">--</span>
                             <span class="overview__label f--14">Receitas</span>
                         </div>
                     </div>
@@ -128,7 +128,7 @@
                             <ion-icon class="ion__icon" name="arrow-down-circle"></ion-icon>
                         </div>
                         <div class="overview__info flex--column">
-                            <span class="overview__value f--18 t--bold">R$ 2.300,00</span>
+                            <span class="overview__value f--18 t--bold">--</span>
                             <span class="overview__label f--14">Despesas</span>
                         </div>
                     </div>
@@ -138,11 +138,13 @@
                             <ion-icon class="ion__icon" name="card"></ion-icon>
                         </div>
                         <div class="overview__info flex--column">
-                            <span class="overview__value f--18 t--bold">R$ 500,00</span>
+                            <span class="overview__value f--18 t--bold">--</span>
                             <span class="overview__label f--14">Cartões de Crédito</span>
                         </div>
                     </div>
                 </div>
+
+                <button class="btn__add-category" id="btn-add-category">Adicionar Categoria</button>
 
                 <h1 class="content__title">Conta</h1>
 
@@ -155,33 +157,33 @@
                                 <span class="wallet__icon flex--center">
                                     <img src="./assets/img/icon-mercado-pago.svg" alt="Icone do banco">
                                 </span>
-                                <span class="wallet__label">Mercado Pago</span>
+                                <span class="wallet__label">--</span>
                             </div>
                         </div>
 
                         <div class="wallet__item flex--column">
                             <span class="wallet__label">Receitas</span>
                             <hr>
-                            <span class="wallet__value">R$ 800,00</span>
+                            <span class="wallet__value">--</span>
                         </div>
 
                         <div class="wallet__item flex--column">
                             <span class="wallet__label">Despesas</span>
                             <hr>
-                            <span class="wallet__value">R$ 2.300,00</span>
+                            <span class="wallet__value">--</span>
                         </div>
 
                         <div class="wallet__item flex--column">
                             <span class="wallet__label">Saldo Atual</span>
                             <hr>
-                            <span class="wallet__value">R$ 2.300,00</span>
+                            <span class="wallet__value">--</span>
                         </div>
 
 
                         <div class="wallet__item flex--column">
                             <span class="wallet__label">Saldo Previsto</span>
                             <hr>
-                            <span class="wallet__value">R$ 3.100,00</span>
+                            <span class="wallet__value">--</span>
                         </div>
                     </div>
                 </div>
@@ -192,39 +194,16 @@
                     <!-- Cabeçalho da "tabela" -->
                     <div class="credit-cards__header grid--table">
                         <span class="credit-cards__title">Descrição</span>
-                        <span class="credit-cards__title">Fechamento</span>
-                        <span class="credit-cards__title">Vencimento</span>
-                        <span class="credit-cards__title">Fatura</span>
-                        <span class="credit-cards__title">Próxima Fatura</span>
+                        <span class="credit-cards__title">Limite Total</span>
+                        <span class="credit-cards__title">Limite Usado</span>
+                        <span class="credit-cards__title">Limite Disponível</span>
+                        <span class="credit-cards__title">Ações</span>
                     </div>
 
-                    <!-- Linha 1 -->
-                    <div class="credit-cards__row grid--table">
-                        <div class="credit-cards__desc item--center gap--15">
-                            <span class="credit-cards__icon flex--center">
-                                <img src="./assets/img/icon-mercado-pago.svg" alt="Nubank">
-                            </span>
-                            <span class="credit-cards__name">Mercado Pago</span>
-                        </div>
-                        <span class="credit-cards__cell">27/06</span>
-                        <span class="credit-cards__cell">30/06</span>
-                        <span class="credit-cards__cell">R$ 1.300,00</span>
-                        <span class="credit-cards__cell">R$ 179,45</span>
-                    </div>
+                    <button class="btn__add credit-cards__add" id="btn-add-credit-card">
+                        <ion-icon class="ion__icon" name="add-circle"></ion-icon>
+                    </button>
 
-                    <!-- Linha 2 -->
-                    <div class="credit-cards__row grid--table">
-                        <div class="credit-cards__desc item--center gap--15">
-                            <span class="credit-cards__icon flex--center">
-                                <img src="./assets/img/icon-mercado-pago.svg" alt="Inter">
-                            </span>
-                            <span class="credit-cards__name">Mercado Pago</span>
-                        </div>
-                        <span class="credit-cards__cell">10/06</span>
-                        <span class="credit-cards__cell">15/06</span>
-                        <span class="credit-cards__cell">R$ 700,00</span>
-                        <span class="credit-cards__cell">R$ 250,00</span>
-                    </div>
                 </div>
 
                 <h1 class="content__title">Últimas Despesas</h1>
@@ -237,33 +216,13 @@
                         <span class="expenses__title">Categoria</span>
                         <span class="expenses__title">Data</span>
                         <span class="expenses__title">Valor</span>
+                        <span class="credit-cards__title">Ações</span>
                     </div>
 
-                    <!-- Linha 1 -->
-                    <div class="expenses__row grid--table">
-                        <div class="expenses__desc item--center gap--15">
-                            <span class="expenses__icon flex--center">
-                                <img src="./assets/img/icon-supermercado.svg" alt="Supermercado">
-                            </span>
-                            <span class="expenses__name">Supermercado</span>
-                        </div>
-                        <span class="expenses__cell">Alimentação</span>
-                        <span class="expenses__cell">10/06</span>
-                        <span class="expenses__cell">R$ 300,00</span>
-                    </div>
+                    <button class="btn__add expenses__add" id="btn-add-expenses-card">
+                        <ion-icon class="ion__icon" name="add-circle"></ion-icon>
+                    </button>
 
-                    <!-- Linha 2 -->
-                    <div class="expenses__row grid--table">
-                        <div class="expenses__desc item--center gap--15">
-                            <span class="expenses__icon flex--center">
-                                <img src="./assets/img/icon-transporte.svg" alt="Transporte">
-                            </span>
-                            <span class="expenses__name">Uber</span>
-                        </div>
-                        <span class="expenses__cell">Transporte</span>
-                        <span class="expenses__cell">12/06</span>
-                        <span class="expenses__cell">R$ 58,00</span>
-                    </div>
                 </div>
 
                 <h1 class="content__title">Últimas Receitas</h1>
@@ -276,33 +235,13 @@
                         <span class="income__title">Categoria</span>
                         <span class="income__title">Data</span>
                         <span class="income__title">Valor</span>
+                        <span class="credit-cards__title">Ações</span>
                     </div>
 
-                    <!-- Linha 1 -->
-                    <div class="income__row grid--table">
-                        <div class="income__desc item--center gap--15">
-                            <span class="income__icon flex--center">
-                                <img src="./assets/img/icon-salario.svg" alt="Salário">
-                            </span>
-                            <span class="income__name">Salário</span>
-                        </div>
-                        <span class="income__cell">Trabalho</span>
-                        <span class="income__cell">05/06</span>
-                        <span class="income__cell">R$ 2.500,00</span>
-                    </div>
+                    <button class="btn__add income__add" id="btn-add-income-card">
+                        <ion-icon class="ion__icon" name="add-circle"></ion-icon>
+                    </button>
 
-                    <!-- Linha 2 -->
-                    <div class="income__row grid--table">
-                        <div class="income__desc item--center gap--15">
-                            <span class="income__icon flex--center">
-                                <img src="./assets/img/icon-pix.svg" alt="Pix">
-                            </span>
-                            <span class="income__name">Transferência Pix</span>
-                        </div>
-                        <span class="income__cell">Outros</span>
-                        <span class="income__cell">08/06</span>
-                        <span class="income__cell">R$ 320,00</span>
-                    </div>
                 </div>
 
             </div>
@@ -312,8 +251,12 @@
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/cartaoCreditoController.js"></script>
+    <script src="./assets/js/receitasController.js"></script>
+    <script src="./assets/js/despesasController.js"></script>
+    <script src="./assets/js/contaController.js"></script>
+    <script src="./assets/js/categoriasController.js"></script>
 </body>
 
 </html>

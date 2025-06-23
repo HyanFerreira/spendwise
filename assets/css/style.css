@@ -331,6 +331,23 @@ main {
     background-color: var(--color-bg-secondary);
 }
 
+.btn__add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    padding: 5px;
+    background-color: var(--color-bg-primary);
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn__add:hover {
+    background-color: var(--color-accent);
+}
+
 .grid--table {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
@@ -358,10 +375,12 @@ main {
 /* Expenses */
 
 .expenses__header,
-.expenses__row {
+.expenses__row,
+.credit-cards__header,
+.credit-cards__row {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 10px;
+    /* grid-template-columns: 2fr 1fr 1fr 1fr; */
+    gap: 25px;
     align-items: center;
 }
 
@@ -395,8 +414,8 @@ main {
 .income__header,
 .income__row {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 10px;
+    /* grid-template-columns: 2fr 1fr 1fr 1fr; */
+    gap: 25px;
     align-items: center;
 }
 
@@ -415,4 +434,131 @@ main {
 .income__desc {
     display: flex;
     align-items: center;
+}
+
+/*  */
+
+.btn__edit,
+.btn__delete,
+.btn__add-category {
+    padding: 5px 10px;
+    border-radius: 8px;
+    background-color: var(--color-text);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn__add-category {
+    padding: 10px;
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text);
+}
+
+/* .btn__edit:hover,
+.btn__delete:hover {
+    background-color: var(--color-text);
+} */
+
+.form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    /* Garante que o formulário fique acima de tudo */
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.form-cartao,
+.form-despesa,
+.form-receita,
+.form-categoria {
+    background: var(--color-bg-primary);
+    color: var(--color-text);
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.3s ease-in-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.form-cartao input,
+.form-despesa input,
+.form-receita input,
+.form-categoria input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-cartao label,
+.form-despesa label,
+.form-receita label,
+.form-categoria label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.form-buttons button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+
+.form-buttons button[type="submit"] {
+    background: #4caf50;
+    color: white;
+}
+
+.form-buttons button[type="submit"]:hover {
+    background: #45a049;
+}
+
+.form-buttons button[type="button"] {
+    background: #f44336;
+    color: white;
+}
+
+.form-buttons button[type="button"]:hover {
+    background: #d32f2f;
 }
