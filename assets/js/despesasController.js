@@ -51,7 +51,18 @@ async function abrirFormularioEdicaoDespesa(despesaId) {
 }
 
 // Renderiza o formulário de criação ou edição
-function renderizarFormularioDespesa(despesa = null) {
+async function renderizarFormularioDespesa(despesa = null) {
+  const categorias = await carregarCategoriasOptions();
+
+  // Cria as opções do select
+  const opcoesCategorias = categorias
+    .map(categoria => {
+      const selecionada =
+        despesa && despesa.id_categoria === categoria.id ? "selected" : "";
+      return `<option value="${categoria.id}" ${selecionada}>${categoria.nome_categoria}</option>`;
+    })
+    .join("");
+
   const formHtml = `
     <div class="form-overlay">
       <form id="form-despesa" class="form-despesa">
@@ -68,9 +79,10 @@ function renderizarFormularioDespesa(despesa = null) {
           : ""}</textarea>
 
         <label>Categoria:</label>
-        <input type="text" id="categoria-despesa" value="${despesa
-          ? despesa.id_categoria || ""
-          : ""}" />
+        <select id="categoria-despesa">
+          <option value="">Outros</option>
+          ${opcoesCategorias}
+        </select>
 
         <label>Data:</label>
         <input type="date" id="data-despesa" value="${despesa
@@ -109,15 +121,12 @@ function renderizarFormularioDespesa(despesa = null) {
     </div>
   `;
 
-  // Insere o formulário na página
   document.body.insertAdjacentHTML("beforeend", formHtml);
 
-  // Configura o submit para criar ou atualizar a despesa
   document
     .getElementById("form-despesa")
     .addEventListener("submit", despesa ? atualizarDespesa : criarDespesa);
 
-  // Configura o botão de cancelar
   document
     .getElementById("cancelar-form-despesa")
     .addEventListener("click", fecharFormularioDespesa);
@@ -193,7 +202,9 @@ async function atualizarDespesa(event) {
   const despesaAtualizada = {
     nome_despesa: document.getElementById("nome-despesa").value,
     desc_despesa: document.getElementById("desc-despesa").value || null,
-    id_categoria: document.getElementById("categoria-despesa").value || null,
+    id_categoria: document.getElementById("categoria-despesa").value
+      ? parseInt(document.getElementById("categoria-despesa").value)
+      : null,
     data_despesa: dataFormatada,
     valor_despesa: parseFloat(document.getElementById("valor-despesa").value),
     metodo_pagamento: document.getElementById("metodo-pagamento").value,
@@ -247,5 +258,22 @@ async function excluirDespesa(despesaId) {
   } catch (error) {
     console.error("Erro ao excluir despesa:", error);
     alert("Erro ao excluir despesa.");
+  }
+}
+
+async function carregarCategoriasOptions() {
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
+
+  try {
+    const response = await fetch(
+      `http://localhost:3000/categorias/user/${usuario.id}`
+    );
+    if (!response.ok) throw new Error("Erro ao carregar categorias.");
+
+    const categorias = await response.json();
+    return categorias;
+  } catch (error) {
+    console.error("Erro ao carregar categorias:", error);
+    return []; // Retorna array vazio se falhar
   }
 }

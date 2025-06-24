@@ -78,11 +78,13 @@ function renderizarDespesas(despesas) {
     row.innerHTML = `
       <div class="expenses__desc item--center gap--15">
         <span class="expenses__icon flex--center">
-          <img src="./assets/img/icon-default.svg" alt="${despesa.nome_despesa}">
+          <ion-icon class="ion__icon" name="arrow-down"></ion-icon>
         </span>
         <span class="expenses__name">${despesa.nome_despesa}</span>
       </div>
-      <span class="expenses__cell">${despesa.id_categoria || "Outros"}</span>
+      <span class="expenses__cell">${despesa.categorias
+        ? despesa.categorias.nome_categoria
+        : "Outros"}</span>
       <span class="expenses__cell">${formatarData(despesa.data_despesa)}</span>
       <span class="expenses__cell">R$ ${despesa.valor_despesa.toFixed(2)}</span>
       <div class="expenses__actions">
@@ -129,11 +131,11 @@ function renderizarReceitas(receitas) {
     row.innerHTML = `
       <div class="income__desc item--center gap--15">
         <span class="income__icon flex--center">
-          <img src="./assets/img/icon-default.svg" alt="${receita.nome_receita}">
+          <ion-icon class="ion__icon" name="arrow-up"></ion-icon>
         </span>
         <span class="income__name">${receita.nome_receita}</span>
       </div>
-      <span class="income__cell">${receita.id_categoria || "Outros"}</span>
+      <span class="income__cell">${receita.categorias?.nome_categoria || "Outros"}</span>
       <span class="income__cell">${formatarData(receita.data_receita)}</span>
       <span class="income__cell">R$ ${receita.valor_receita.toFixed(2)}</span>
       <div class="expenses__actions">
@@ -226,7 +228,7 @@ async function carregarConta(userId, totalLimiteUsadoCartoes) {
 
     document.querySelector(
       ".wallet__item:nth-child(4) .wallet__value"
-    ).textContent = `R$ ${conta.saldoAtual.toFixed(2)}`;
+    ).textContent = `R$ ${conta.saldoInicial.toFixed(2)}`;
 
     document.querySelector(
       ".wallet__item:nth-child(5) .wallet__value"

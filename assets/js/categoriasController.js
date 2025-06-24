@@ -148,8 +148,11 @@ async function atualizarCategoria(event) {
     return;
   }
 
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
+
   const categoriaAtualizada = {
-    nome_categoria: nomeCategoria
+    nome_categoria: nomeCategoria,
+    id_user: usuario.id
   };
 
   try {

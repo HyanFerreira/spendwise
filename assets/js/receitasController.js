@@ -75,7 +75,17 @@ async function abrirFormularioEdicaoReceita(receitaId) {
 }
 
 // Renderiza o formulário de criar ou editar receita
-function renderizarFormularioReceita(receita = null) {
+async function renderizarFormularioReceita(receita = null) {
+  const categorias = await carregarCategoriasOptions();
+
+  const opcoesCategorias = categorias
+    .map(categoria => {
+      const selecionada =
+        receita && receita.id_categoria === categoria.id ? "selected" : "";
+      return `<option value="${categoria.id}" ${selecionada}>${categoria.nome_categoria}</option>`;
+    })
+    .join("");
+
   const formHtml = `
     <div class="form-overlay">
       <form id="form-receita" class="form-receita">
@@ -92,9 +102,10 @@ function renderizarFormularioReceita(receita = null) {
           : ""}</textarea>
 
         <label>Categoria:</label>
-        <input type="text" id="categoria-receita" value="${receita
-          ? receita.id_categoria || ""
-          : ""}" />
+        <select id="categoria-receita">
+          <option value="">Outros</option>
+          ${opcoesCategorias}
+        </select>
 
         <label>Data:</label>
         <input type="date" id="data-receita" value="${receita
@@ -133,15 +144,12 @@ function renderizarFormularioReceita(receita = null) {
     </div>
   `;
 
-  // Insere o formulário no body da página
   document.body.insertAdjacentHTML("beforeend", formHtml);
 
-  // Configura o evento de submit: criar ou atualizar receita
   document
     .getElementById("form-receita")
     .addEventListener("submit", receita ? atualizarReceita : criarReceita);
 
-  // Configura o evento de cancelar o formulário
   document
     .getElementById("cancelar-form-receita")
     .addEventListener("click", fecharFormularioReceita);
@@ -269,5 +277,22 @@ async function excluirReceita(receitaId) {
   } catch (error) {
     console.error("Erro ao excluir receita:", error);
     alert("Erro ao excluir receita.");
+  }
+}
+
+async function carregarCategoriasOptions() {
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
+
+  try {
+    const response = await fetch(
+      `http://localhost:3000/categorias/user/${usuario.id}`
+    );
+    if (!response.ok) throw new Error("Erro ao carregar categorias.");
+
+    const categorias = await response.json();
+    return categorias;
+  } catch (error) {
+    console.error("Erro ao carregar categorias:", error);
+    return [];
   }
 }

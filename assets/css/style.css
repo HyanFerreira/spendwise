@@ -317,6 +317,14 @@ main {
     border-radius: 100%;
 }
 
+.expenses__icon {
+    background-color: #C74C4CBF;
+}
+
+.income__icon {
+    background-color: #00B359BF;
+}
+
 .wallet__icon img,
 .credit-cards__icon img,
 .expenses__icon img,
@@ -344,8 +352,18 @@ main {
     transition: background-color 0.3s ease-in-out;
 }
 
+.btn__add-conta {
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text);
+}
+
 .btn__add:hover {
     background-color: var(--color-accent);
+}
+
+.btn__add-conta:hover {
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text);
 }
 
 .grid--table {
@@ -488,7 +506,8 @@ main {
 .form-cartao,
 .form-despesa,
 .form-receita,
-.form-categoria {
+.form-categoria,
+.form-conta {
     background: var(--color-bg-primary);
     color: var(--color-text);
     padding: 20px;
@@ -514,7 +533,8 @@ main {
 .form-cartao input,
 .form-despesa input,
 .form-receita input,
-.form-categoria input {
+.form-categoria input,
+.form-conta input {
     width: 100%;
     margin-bottom: 15px;
     padding: 8px;
@@ -525,7 +545,8 @@ main {
 .form-cartao label,
 .form-despesa label,
 .form-receita label,
-.form-categoria label {
+.form-categoria label,
+.form-conta label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
