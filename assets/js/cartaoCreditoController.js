@@ -66,11 +66,6 @@ function renderizarFormularioCartao(cartao = null) {
           ? cartao.nome_cartao
           : ""}" required />
 
-        <label>Ícone (URL):</label>
-        <input type="text" id="icone-cartao" value="${cartao
-          ? cartao.icone_cartao || ""
-          : ""}" />
-
         <label>Limite do Cartão:</label>
         <input type="number" id="limite-cartao" step="0.01" value="${cartao
           ? cartao.limite_cartao
@@ -119,12 +114,12 @@ async function criarCartao(event) {
   // Prepara os dados do novo cartão
   const novoCartao = {
     nome_cartao: document.getElementById("nome-cartao").value,
-    icone_cartao: document.getElementById("icone-cartao").value || null,
+    // icone_cartao: document.getElementById("icone-cartao").value || null,
     limite_cartao: parseFloat(document.getElementById("limite-cartao").value),
     limite_disponivel: parseFloat(
       document.getElementById("limite-cartao").value
-    ), // O limite disponível começa igual ao limite total
-    limite_usado: 0, // Limite usado inicia zerado
+    ),
+    limite_usado: 0,
     id_user: usuario.id
   };
 

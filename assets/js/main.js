@@ -181,7 +181,7 @@ function renderCartoes(cartoes) {
       <div class="credit-cards__desc item--center gap--15">
         <span class="credit-cards__icon flex--center">
           <img src="${cartao.icone_cartao ||
-            "./assets/img/icon-default.svg"}" alt="${cartao.nome_cartao}">
+            "./assets/img/icon-mercado-pago.svg"}" alt="${cartao.nome_cartao}">
         </span>
         <span class="credit-cards__name">${cartao.nome_cartao}</span>
       </div>
@@ -248,7 +248,7 @@ function atualizarVisaoGeral(conta, totalLimiteUsadoCartoes) {
   // Card 1 - Saldo Atual
   overviewCards[0].querySelector(
     ".overview__value"
-  ).textContent = `R$ ${conta.saldoAtual.toFixed(2)}`;
+  ).textContent = `R$ ${conta.saldoInicial.toFixed(2)}`;
 
   // Card 2 - Receitas
   overviewCards[1].querySelector(
